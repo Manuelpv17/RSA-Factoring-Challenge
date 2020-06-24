@@ -7,11 +7,14 @@ if len(argv) != 2:
 
 with open(argv[1], mode="r", encoding="utf-8") as f:
     for line in f:
-        q = 2
         n = int(line)
-        while q <= n:
-            if n % q == 0:
-                p = n // q
-                print("{}={}*{}".format(n, p, q))
-                break
-            q += 1
+        if n % 2 == 0:
+            print("{}={}*{}".format(n, n // 2, 2))
+        else:
+            q = 3
+            while q <= n:
+                if n % q == 0:
+                    p = n // q
+                    print("{}={}*{}".format(n, p, q))
+                    break
+                q += 2
