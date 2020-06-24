@@ -9,8 +9,8 @@ with open(argv[1], mode="r", encoding="utf-8") as f:
     for line in f:
         q = 2
         n = int(line)
-        while q <= n/2:
-            if (n % q == 0):
+        while q <= n:
+            if n % q == 0:
                 p = n // q
                 print("{}={}*{}".format(n, p, q))
                 break
