@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 from sys import argv
+from math import sqrt
 
 if len(argv) != 2:
     print("Usage: factors <file>")
@@ -14,7 +15,7 @@ with open(argv[1], mode="r", encoding="utf-8") as f:
             flag = 1
         else:
             q = 3
-            while q <= n / q:
+            while q <= sqrt(n):
                 if n % q == 0:
                     p = n // q
                     print("{}={}*{}".format(n, p, q))
