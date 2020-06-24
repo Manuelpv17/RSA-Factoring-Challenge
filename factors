@@ -8,13 +8,17 @@ if len(argv) != 2:
 with open(argv[1], mode="r", encoding="utf-8") as f:
     for line in f:
         n = int(line)
+        flag = 0
         if n % 2 == 0:
             print("{}={}*{}".format(n, n // 2, 2))
         else:
             q = 3
-            while q <= n:
+            while q <= n / q:
                 if n % q == 0:
                     p = n // q
                     print("{}={}*{}".format(n, p, q))
+                    flag = 1
                     break
                 q += 2
+        if flag == 0:
+            print("{}={}*{}".format(n, 1, n))
