@@ -6,7 +6,7 @@ from math import sqrt
 if len(argv) != 2:
     print("Usage: factors <file>")
 
-with open(argv[1], mode="r", encoding="utf-8") as f:
+with open(argv[1], mode="r") as f:
     for line in f:
         n = int(line)
         flag = 0
@@ -23,4 +23,4 @@ with open(argv[1], mode="r", encoding="utf-8") as f:
                     break
                 q += 2
         if flag == 0:
-            print("{}={}*{}".format(n, 1, n))
+            print("{}={}*{}".format(n, n, 1))
