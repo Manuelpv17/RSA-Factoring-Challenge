@@ -15,12 +15,11 @@ with open(argv[1], mode="r") as f:
             flag = 1
         else:
             q = 3
-            while q <= sqrt(n):
+            for q in range(3, int(sqrt(n)) + 1, 2):
                 if n % q == 0:
                     p = n // q
                     print("{}={}*{}".format(n, p, q))
                     flag = 1
                     break
-                q += 2
         if flag == 0:
             print("{}={}*{}".format(n, n, 1))
